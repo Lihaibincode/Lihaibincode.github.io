@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>部署HALO | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="部署HALO配置更新软件包 1sudo yum update -y 安装 Java 运行环境安装 OpenJRE 1sudo yum install java-1.8.0-openjdk -y 检测是否安装成功 1java -version  或者直接输入java 安装 Halo 1234下载配置文件到 ~&#x2F;.halo 目录curl -o ~&#x2F;.halo&#x2F;application.yaml --cr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="部署HALO">
+<meta property="og:url" content="http://yoursite.com/2020/07/12/HALO/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="部署HALO配置更新软件包 1sudo yum update -y 安装 Java 运行环境安装 OpenJRE 1sudo yum install java-1.8.0-openjdk -y 检测是否安装成功 1java -version  或者直接输入java 安装 Halo 1234下载配置文件到 ~&#x2F;.halo 目录curl -o ~&#x2F;.halo&#x2F;application.yaml --cr">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-11T20:55:00.000Z">
+<meta property="article:modified_time" content="2020-07-11T22:13:08.802Z">
+<meta property="article:author" content="清风阁">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-HALO" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/12/HALO/" class="article-date">
+  <time datetime="2020-07-11T20:55:00.000Z" itemprop="datePublished">2020-07-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      部署HALO
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="部署HALO"><a href="#部署HALO" class="headerlink" title="部署HALO"></a>部署HALO</h1><p><strong>配置</strong><br><strong>更新软件包</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum update -y</span><br></pre></td></tr></table></figure>
+<p><strong>安装 Java 运行环境</strong><br><strong>安装 OpenJRE</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install java-1.8.0-openjdk -y</span><br></pre></td></tr></table></figure>
+<p><strong>检测是否安装成功</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version  或者直接输入java</span><br></pre></td></tr></table></figure>
+<p><strong>安装 Halo</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">下载配置文件到 ~/.halo 目录</span><br><span class="line">curl -o ~/.halo/application.yaml --create-dirs https://dl.halo.run/config/application-template.yaml</span><br><span class="line"><span class="section"># 使用 Vim 工具修改配置文件</span></span><br><span class="line">vim ~/.halo/application.yaml</span><br></pre></td></tr></table></figure>
+<p><strong>运行 Halo</strong><br>首先进入目录</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<p>其次，创建文件夹<br><code>mkdir halo</code><br>并且进入到文件夹中<br><code>cd halo</code><br>然后下载halo包</p>
+<h1 id="下载最新的-Halo-安装包，-为版本号，不带-v，更多下载地址请访问https-halo-run-archives-download-html"><a href="#下载最新的-Halo-安装包，-为版本号，不带-v，更多下载地址请访问https-halo-run-archives-download-html" class="headerlink" title="下载最新的 Halo 安装包， 为版本号，不带 v，更多下载地址请访问https://halo.run/archives/download.html"></a>下载最新的 Halo 安装包， 为版本号，不带 v，更多下载地址请访问<a href="https://halo.run/archives/download.html" target="_blank" rel="noopener">https://halo.run/archives/download.html</a></h1><p><code>wget [https://dl.halo.run/release/halo-.jar](https://dl.halo.run/release/halo-%7B%7Bversion%7D%7D.jar) -O halo-latest.jar</code><br>下载完成直接ls进行查看是否成功<br>下面直接开始配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 下载 Halo 官方的 halo.service 模板</span><br><span class="line">sudo curl -o &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;halo.service --create-dirs https:&#x2F;&#x2F;dl.halo.run&#x2F;config&#x2F;halo.service</span><br><span class="line"># 修改 halo.service</span><br><span class="line">sudo vim &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;halo.service</span><br></pre></td></tr></table></figure>
+
+<p>运行修改之后可以看到如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;Halo Service</span><br><span class="line">Documentation&#x3D;https:&#x2F;&#x2F;halo.run</span><br><span class="line">After&#x3D;network-online.target</span><br><span class="line">Wants&#x3D;network-online.target</span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;simple</span><br><span class="line">ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;java -server -Xms256m -Xmx256m -jar YOUR_JAR_PATH</span><br><span class="line">ExecStop&#x3D;&#x2F;bin&#x2F;kill -s QUIT $MAINPID</span><br><span class="line">Restart&#x3D;always</span><br><span class="line">StandOutput&#x3D;syslog</span><br><span class="line">StandError&#x3D;inherit</span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>YOUR_JAR_PATH修改为你目录下的halo-latest.jar例如我这里就是/usr/halo/halo-latest.jar</strong><br>**</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 修改 service 文件之后需要刷新 Systemd</span></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"> </span><br><span class="line"><span class="section"># 使 Halo 开机自启</span></span><br><span class="line">sudo systemctl enable halo</span><br><span class="line"> </span><br><span class="line"><span class="section"># 启动 Halo</span></span><br><span class="line">sudo service halo start</span><br><span class="line"><span class="section"># 重启 Halo</span></span><br><span class="line">sudo service halo restart</span><br><span class="line"> </span><br><span class="line"><span class="section"># 停止 Halo</span></span><br><span class="line">sudo service halo stop</span><br><span class="line"> </span><br><span class="line"><span class="section"># 查看 Halo 的运行状态</span></span><br><span class="line">sudo service halo status</span><br></pre></td></tr></table></figure>
+<p><strong>更新</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 备份数据</span></span><br><span class="line">cp -r ~/.halo ~/.halo.bak</span><br><span class="line"> </span><br><span class="line"><span class="section"># 备份旧的安装包</span></span><br><span class="line">mv halo-latest.jar halo-latest.jar.bak</span><br><span class="line"> </span><br><span class="line"><span class="section"># 下载最新的 Halo 安装包，&#123;&#123;version&#125;&#125; 为版本号，不带 v，更多下载地址请访问https://halo.run/archives/download.html</span></span><br><span class="line">wget https://dl.halo.run/release/halo-&#123;&#123;version&#125;&#125;.jar -O halo-latest.jar</span><br><span class="line"> </span><br><span class="line"><span class="section"># 测试是否能够正常启动</span></span><br><span class="line">java -jar halo-latest.jar</span><br><span class="line"> </span><br><span class="line"><span class="section"># 重启应用</span></span><br><span class="line">service halo restart</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/12/HALO/" data-id="ckcp5h5so0001y0tdd9uk3k3o" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/12/mysql/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          mysql
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/17/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/17/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/">图片测试</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/12/%E5%89%96%E6%9E%90SPRING-IOC%E6%BA%90%E7%A0%81%EF%BC%88%E4%B8%80%EF%BC%89/">剖析SPRING-IOC源码（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/12/SPRING-IOC%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90-BEAN%E7%9A%84%E4%BA%A7%E7%94%9F/">SPRING-IOC源码解析-BEAN的产生</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/12/Mysql%E7%9A%84%E7%B4%A2%E5%BC%95%E6%98%AF%E6%80%8E%E4%B9%88%E5%8A%A0%E9%80%9F%E6%9F%A5%E8%AF%A2%E7%9A%84/">Mysql的索引是怎么加速查询的</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 清风阁<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
